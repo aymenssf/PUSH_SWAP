@@ -15,9 +15,19 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdio.h>
-#include "./libft/libft.h"
+#include "libft/libft.h"
+typedef struct s_stack
+{
+        int index;
+        int value;
+        struct s_stack *next;
+} t_stack;
+
+
+
+
 void    disp_error(char *str);
 int check_space(char *str);
 void error_space(char *str);
-
+void    print_error(void);
 #endif

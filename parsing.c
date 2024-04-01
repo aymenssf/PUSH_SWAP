@@ -26,6 +26,12 @@ int check_space(char *str)
         return (1);
 }
 
+// int is_duplicate()
+// {
+//         t_stack *tmp;
+//         t_stack *tmp2;
+
+// }
 void error_space(char *str)
 {
         if (!check_space(str))

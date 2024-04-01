@@ -12,10 +12,29 @@
 
 #include "push_swap.h"
 
+int is_valid_integer(char *arg)
+{
+    int i = 0;
+    if (arg[i] == '-' || arg[i] == '+')
+        i++;
+    while (arg[i])
+    {
+        if (!ft_isdigit(arg[i]))
+            return 0;
+        i++;
+    }
+    return 1;
+}
+
 int main(int ac, char **av)
 {
     if (ac < 2)
-        disp_error("Error\n");
+        disp_error("Argument less than 2\n");
+    while(--ac > 0)
+    {
+        if (!is_valid_integer(av[ac]))
+            disp_error("Invalid integer\n");
+    }
     error_space(av[1]);
-    return (0); 
+    return (0);
 }

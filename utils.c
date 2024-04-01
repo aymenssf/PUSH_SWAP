@@ -18,9 +18,8 @@ void    disp_error(char *str)
     write(2, str, ft_strlen(str));
     exit(1);
 }
-void    print_error(char *str)
+void    print_error(void)
 {
     ft_putstr_fd("Error\n", 2);
-    write(2, str, ft_strlen(str));
     exit(1);
 }
