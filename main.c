@@ -2,9 +2,12 @@
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: aassaf <aassaf@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
+/*                                                    +:+ +:+
+	+:+     */
+/*   By: aassaf <aassaf@student.42.fr>              +#+  +:+
+	+#+        */
+/*                                                +#+#+#+#+#+
+	+#+           */
 /*   Created: 2024/03/30 15:32:50 by aassaf            #+#    #+#             */
 /*   Updated: 2024/03/30 15:32:50 by aassaf           ###   ########.fr       */
 /*                                                                            */
@@ -12,29 +15,19 @@
 
 #include "push_swap.h"
 
-int is_valid_integer(char *arg)
+int	main(int ac, char **av)
 {
-    int i = 0;
-    if (arg[i] == '-' || arg[i] == '+')
-        i++;
-    while (arg[i])
-    {
-        if (!ft_isdigit(arg[i]))
-            return 0;
-        i++;
-    }
-    return 1;
-}
+	t_stack *stack_a;
+	t_stack *stack_b;
 
-int main(int ac, char **av)
-{
-    if (ac < 2)
-        disp_error("Argument less than 2\n");
-    while(--ac > 0)
-    {
-        if (!is_valid_integer(av[ac]))
-            disp_error("Invalid integer\n");
-    }
-    error_space(av[1]);
-    return (0);
+
+	stack_a = malloc(sizeof(t_stack));
+	stack_b = malloc(sizeof(t_stack));
+
+	if(!stack_a || !stack_b)
+		exit(1);
+	if (ac < 2)
+		disp_error("Argument less than 2\n");
+	all_parsing(ac, av);
+	return (0);
 }
