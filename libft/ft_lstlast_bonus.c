@@ -12,28 +12,23 @@
 
 #include "libft.h"
 
-t_list	*ft_lstlast(t_list *lst)
+t_stack	*ft_lstlast(t_stack *lst)
 {
-	t_list	*tmp;
-
-	tmp = lst;
 	if (!lst)
 		return (NULL);
-	while (tmp->next)
-	{
-		tmp = tmp->next;
-	}
-	return (tmp);
+	while (lst->next)
+		lst = lst->next;
+	return (lst);
 }
 
 /* #include <stdio.h>
 int	main(void)
 {
-		t_list *L = NULL;
-		t_list *n1 = ft_lstnew("aymen");
-		t_list *n2 = ft_lstnew("assaf");
+		t_stack *L = NULL;
+		t_stack *n1 = ft_lstnew("aymen");
+		t_stack *n2 = ft_lstnew("assaf");
 		ft_lstadd_front(&L, n1);
 		ft_lstadd_front(&L, n2);
-		t_list *last = ft_lstlast(L);
+		t_stack *last = ft_lstlast(L);
 		printf("%s", (char *)last -> content);
 }  */

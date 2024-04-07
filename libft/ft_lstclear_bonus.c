@@ -12,10 +12,10 @@
 
 #include "libft.h"
 
-void	ft_lstclear(t_list **lst, void (*del)(void *))
+void	ft_lstclear(t_stack **lst, void (*del)(void *))
 {
-	t_list	*tmp;
-	t_list	*next;
+	t_stack	*tmp;
+	t_stack	*next;
 
 	if (!lst || !del)
 		return ;
@@ -46,7 +46,7 @@ int	main(void)
 	char	str2[] = "42";
 	char	str3[] = "";
 	char	str4[] = "Found it!";
-	t_list	*elem;
+	t_stack	*elem;
 
 	elem = ft_lstnew(str1);
 	elem->next = ft_lstnew(str2);

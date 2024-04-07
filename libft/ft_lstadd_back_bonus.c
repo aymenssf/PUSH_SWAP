@@ -12,9 +12,9 @@
 
 #include "libft.h"
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
+void	ft_lstadd_back(t_stack **lst, t_stack *new)
 {
-	t_list	*lastone;
+	t_stack	*lastone;
 
 	if (!lst || !new)
 		return ;
@@ -27,9 +27,9 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 /* #include <stdio.h>
 int	main(void)
 {
-		t_list *L = NULL;
-		t_list *n1 = ft_lstnew("aymen");
-		t_list *n2 = ft_lstnew("assaf");
+		t_stack *L = NULL;
+		t_stack *n1 = ft_lstnew("aymen");
+		t_stack *n2 = ft_lstnew("assaf");
 		ft_lstadd_back(&L, n2);
 		ft_lstadd_back(&L, n1);
 		while(L)

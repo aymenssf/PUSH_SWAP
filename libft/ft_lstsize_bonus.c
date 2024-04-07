@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int	ft_lstsize(t_list *lst)
+int	ft_lstsize(t_stack *lst)
 {
 	size_t	count;
 
@@ -30,11 +30,11 @@ int	ft_lstsize(t_list *lst)
 /* #include <stdio.h>
 int	main(void)
 {
-		t_list *L = NULL;
-		t_list *n1 = ft_lstnew("aymen");
-		t_list *n2 = ft_lstnew("assaf");
-		t_list *n3 = ft_lstnew("assaf");
-		t_list *n4 = ft_lstnew("assaf");
+		t_stack *L = NULL;
+		t_stack *n1 = ft_lstnew("aymen");
+		t_stack *n2 = ft_lstnew("assaf");
+		t_stack *n3 = ft_lstnew("assaf");
+		t_stack *n4 = ft_lstnew("assaf");
 
 		ft_lstadd_front(&L, n1);
 		ft_lstadd_front(&L, n2);
