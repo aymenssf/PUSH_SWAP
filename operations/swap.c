@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 int ft_swap(t_stack **stack)
 {
@@ -32,7 +32,7 @@ int sa(t_stack **stack_a, int isprint)
 	if(ft_swap(stack_a) != -1)
 	{
 		if (isprint)
-			ft_putstr("sa\n");
+			ft_putstr_fd("sa\n", 1);
 		return (0);
 	}
 	return (-1);
@@ -43,7 +43,7 @@ int sb(t_stack **stack_b, int isprint)
 	if(ft_swap(stack_b) != -1)
 	{
 		if (isprint)
-			ft_putstr("sb\n");
+			ft_putstr_fd("sb\n", 1);
 		return (0);
 	}
 	return (-1);
@@ -54,7 +54,7 @@ int ss(t_stack **stack_a, t_stack **stack_b, int isprint)
 	if(ft_swap(stack_a) != -1 && ft_swap(stack_b) != -1)
 	{
 		if (isprint)
-			ft_putstr("ss\n");
+			ft_putstr_fd("ss\n", 1);
 		return (0);
 	}
 	return (-1);

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 int reverse_rotate(t_stack **stack)
 {
@@ -33,7 +33,7 @@ int rra(t_stack **stack_a, int isprint)
 	if (reverse_rotate(stack_a) == -1)
 		return (-1);
 	if (isprint)
-		ft_putstr("rra\n");
+		ft_putstr_fd("rra\n", 1);
 	return (0);
 }
 
@@ -42,7 +42,7 @@ int rrb(t_stack **stack_b, int isprint)
 	if (reverse_rotate(stack_b) == -1)
 		return (-1);
 	if (isprint)
-		ft_putstr("rrb\n");
+		ft_putstr_fd("rrb\n", 1);
 	return (0);
 }
 
@@ -51,6 +51,6 @@ int rrr(t_stack **stack_a, t_stack **stack_b, int isprint)
 	if (reverse_rotate(stack_a) == -1 || reverse_rotate(stack_b) == -1)
 		return (-1);
 	if (isprint)
-		ft_putstr("rrr\n");
+		ft_putstr_fd("rrr\n", 1);
 	return (0);
 }
