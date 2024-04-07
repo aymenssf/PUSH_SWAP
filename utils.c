@@ -15,6 +15,34 @@
 
 #include "push_swap.h"
 
+void stack_index(t_stack **stack)
+{
+	t_stack *tmp;
+	int i;
+
+	i = 0;
+	tmp = *stack;
+	while(tmp)
+	{
+		tmp->index = i;
+		tmp = tmp->next;
+		i++;
+	}
+}
+void	free_stack(t_stack **stack)
+{
+	t_stack *head;
+	t_stack *tmp;
+
+	head = *stack;
+	while(head)
+	{
+		tmp = head;
+		head = head->next;
+		free(tmp);
+	}
+	*stack = NULL;
+}
 
 void	disp_error(char *str)
 {
@@ -28,7 +56,7 @@ void	print_error(void)
 	exit(1);
 }
 
-void	free_arr(char **arr)
+void	**free_arr(char **arr)
 {
 	int i;
 
@@ -39,4 +67,5 @@ void	free_arr(char **arr)
 		i++;
 	}
 	free(arr);
+	return (NULL);
 }

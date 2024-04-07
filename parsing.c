@@ -12,7 +12,18 @@
 
 #include "push_swap.h"
 
-
+int is_sorted(t_stack *stack)
+{
+	t_stack *tmp;
+	tmp = stack;
+	while(tmp && tmp->next)
+	{
+		if(tmp->value > tmp->next->value)
+			return(0);
+		tmp = tmp->next;
+	}
+	return (1);
+}
 int	check_space(char *str)
 {
 	int i;

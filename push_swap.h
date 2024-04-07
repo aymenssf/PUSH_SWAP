@@ -17,21 +17,19 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-typedef struct s_stack
-{
-	int index;
-	int value;
-	struct s_stack *next;
-} t_stack;
-
 void	disp_error(char *str);
 int	check_space(char *str);
 int	is_valid_integer(char *arg);
 int is_duplicate(int nb, t_stack **stack);
 void	all_parsing(int ac, char **av);
 void	print_error(void);
-void	free_arr(char **arr);
-
+void	**free_arr(char **arr);
+void	free_stack(t_stack **stack);
+int is_sorted(t_stack *stack);
+int find_max(t_stack *lst);
+int find_min(t_stack *lst);
+void	sort_algo(t_stack **a, t_stack **b);
+void stack_index(t_stack **stack);
 //operations
 //push
 int ft_push(t_stack **src, t_stack **dst);
