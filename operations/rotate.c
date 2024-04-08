@@ -18,11 +18,13 @@ int rotate(t_stack **stack)
 		return (-1);
 	t_stack *last;
 	last = ft_lstlast(*stack);
+
+	t_stack *tmp;
+
 	last->next = *stack;
+	tmp = (*stack);
 	*stack = (*stack)->next;
-	t_stack *new_last;
-	new_last = ft_lstlast(*stack);
-	new_last->next = NULL;
+	tmp->next = NULL;
 	return (0);
 }
 int ra(t_stack **stack_a, int isprint)
@@ -41,7 +43,7 @@ int rb(t_stack **stack_b, int isprint)
 	if(rotate(stack_b) != -1)
 	{
 		if (isprint)
-			ft_putstr_fd("sb\n", 1);
+			ft_putstr_fd("rb\n", 1);
 		return (0);
 	}
 	return (-1);
@@ -52,7 +54,7 @@ int rr(t_stack **stack_a, t_stack **stack_b, int isprint)
 	if(rotate(stack_a) != -1 && rotate(stack_b) != -1)
 	{
 		if (isprint)
-			ft_putstr_fd("ss\n", 1);
+			ft_putstr_fd("rr\n", 1);
 		return (0);
 	}
 	return (-1);
