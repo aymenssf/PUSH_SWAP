@@ -45,6 +45,7 @@ void sort_4_norm(t_stack **a, t_stack **b)
 	if (is_sorted(*a))
 		return ;
 	pb(a, b, 1);
+	stack_index(a);
 	sort_3(a);
 	pa(a, b, 1);
 }
@@ -82,6 +83,7 @@ void sort_5_norm(t_stack **a, t_stack **b)
 	if(is_sorted(*a))
 		return ;
 	pb(a, b, 1);
+	stack_index(a);
 	sort_4(a, b);
 	pa(a, b, 1);
 }
@@ -112,9 +114,10 @@ void sort_5(t_stack **a, t_stack **b)
 			}
 			else if(tmp->index == 4)
 				rra(a, 1);
-			sort_5_norm(a, b);
 		}
+		tmp  = tmp->next;
 	}
+			sort_5_norm(a, b);
 }
 
 void	sort_algo(t_stack **a, t_stack **b)

@@ -42,6 +42,7 @@ void create_stack(int ac, char **av, t_stack **stack_a, t_stack **stack_b)
 		free_arr(arr);
 		i++;
 	}
+	// stack_index(stack_a);
 }
 
 int	main(int ac, char **av)
@@ -60,8 +61,9 @@ int	main(int ac, char **av)
 		exit(0);
 	}
 	sort_algo(&stack_a, &stack_b);
-	printf("stack_a\n");
+	// printf("stack_a\n");
 	t_stack *tmp = stack_a;
+	// printf("%d\n",ft_lstsize(tmp));
 	while(tmp)
 	{
 		printf("%d\n", tmp->value);
