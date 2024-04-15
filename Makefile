@@ -1,9 +1,9 @@
 NAME	= push_swap
 CC	= cc
-CFLAGS  = -Wall -Werror -Wextra
+CFLAGS  = #-Wall -Werror -Wextra
 SRC	= parsing.c main.c utils.c utils_libft.c sort_algo.c \
 		operations/push.c operations/swap.c operations/rotate.c \
-		operations/reverse_rotate.c sort_utils.c
+		operations/reverse_rotate.c sort_utils.c big_sort.c \
 
 LIBFT  = libft/libft.a
 OBJ 	= $(SRC:.c=.o)

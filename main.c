@@ -42,7 +42,6 @@ void create_stack(int ac, char **av, t_stack **stack_a, t_stack **stack_b)
 		free_arr(arr);
 		i++;
 	}
-	// stack_index(stack_a);
 }
 
 int	main(int ac, char **av)

@@ -24,6 +24,7 @@ int is_sorted(t_stack *stack)
 	}
 	return (1);
 }
+
 int	check_space(char *str)
 {
 	int i;
@@ -40,7 +41,9 @@ int	check_space(char *str)
 
 int	is_valid_integer(char *arg)
 {
-	int i = 0;
+	int i;
+
+	i = 0;
 	if (arg[i] == '-' || arg[i] == '+')
 		i++;
 	while (arg[i])
@@ -67,7 +70,7 @@ void	all_parsing(int ac, char **av)
 		j = 0;
 		while (tmp[j])
 		{
-			if (!is_valid_integer(tmp[j]))
+			if (!is_valid_integer(tmp[j]) || ft_atoi(tmp[j]) > INT_MAX || ft_atoi(tmp[j]) < INT_MIN)
 				disp_error("Invalid integer\n");
 			j++;
 		}

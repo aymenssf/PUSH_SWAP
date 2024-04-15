@@ -17,6 +17,15 @@
 # include <stdlib.h>
 # include <unistd.h>
 
+typedef struct s_push_swap
+{
+	t_stack *a;
+	t_stack *b;
+	int *arr;
+	int size_a;
+	int size_b;
+}		t_push_swap;
+
 void	disp_error(char *str);
 int	check_space(char *str);
 int	is_valid_integer(char *arg);
@@ -30,6 +39,9 @@ int find_max(t_stack *lst);
 int find_min(t_stack *lst);
 void	sort_algo(t_stack **a, t_stack **b);
 void stack_index(t_stack **stack);
+void	big_sort(t_stack **a, t_stack **b);
+void	index_arr(t_stack *lst, int *arr);
+void	back_to_a(t_stack **a, t_stack **b);
 //operations
 //push
 int ft_push(t_stack **src, t_stack **dst);

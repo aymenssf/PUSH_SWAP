@@ -131,6 +131,6 @@ void	sort_algo(t_stack **a, t_stack **b)
 		sort_4(a, b);
 	else if(ft_lstsize(*a) == 5)
 		sort_5(a, b);
-	// else
-	// 	extended_algo(a, b);
+	else
+		big_sort(a, b);
 }
