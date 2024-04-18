@@ -6,7 +6,7 @@
 /*   By: aassaf <aassaf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 09:20:09 by aassaf            #+#    #+#             */
-/*   Updated: 2024/04/09 09:20:09 by aassaf           ###   ########.fr       */
+/*   Updated: 2024/04/17 20:37:39 by aassaf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -149,7 +149,6 @@ void	back_to_a(t_stack **a, t_stack **b)
 
 void	big_sort(t_stack **a, t_stack **b)
 {
-	t_push_swap chunk;
 	int i;
 	int range;
 	int size;
