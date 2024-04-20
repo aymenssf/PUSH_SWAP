@@ -68,5 +68,7 @@ int	main(int ac, char **av)
 		printf("%d\n", tmp->value);
 		tmp = tmp->next;
 	}
+	free_stack(stack_a);
+	free_stack(stack_b);
 	// return (0);
 }
