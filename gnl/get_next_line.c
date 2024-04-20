@@ -17,7 +17,7 @@ void	add_buffer_to_list(t_list **lst, char *buffer)
 	t_list	*newnode;
 	t_list	*lastnode;
 
-	lastnode = ft_lstlast(*lst);
+	lastnode = ft_listlast(*lst);
 	newnode = (t_list *)malloc(sizeof(t_list));
 	if (!newnode)
 		return ;

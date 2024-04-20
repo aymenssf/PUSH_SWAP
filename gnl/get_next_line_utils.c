@@ -12,7 +12,7 @@
 
 #include "get_next_line.h"
 
-t_list	*ft_lstlast(t_list *lst)
+t_list	*ft_listlast(t_list *lst)
 {
 	if (!lst)
 		return (NULL);
@@ -104,7 +104,7 @@ void	clearlst(t_list **lst)
 	newnode = (t_list *)malloc(sizeof(t_list));
 	if (!newstr || !newnode)
 		return ;
-	lastnode = ft_lstlast(*lst);
+	lastnode = ft_listlast(*lst);
 	while (lastnode->content[i] && lastnode->content[i] != '\n')
 		i++;
 	while (lastnode->content[i] && lastnode->content[++i])

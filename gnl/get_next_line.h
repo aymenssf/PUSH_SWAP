@@ -31,7 +31,7 @@ char				*get_next_line(int fd);
 char				*get_linee(t_list *lst);
 void				read_to_list(t_list **lst, int fd);
 void				add_buffer_to_list(t_list **lst, char *buffer);
-t_list				*ft_lstlast(t_list *lst);
+t_list				*ft_listlast(t_list *lst);
 int					count_my_line(t_list *lst);
 void				copy_lstline(t_list *lst, char *line);
 void				clearlst(t_list **lst);

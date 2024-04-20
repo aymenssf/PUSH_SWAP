@@ -12,8 +12,9 @@
 
 #ifndef PUSH_SWAP_BONUS_H
 # define PUSH_SWAP_BONUS_H
-
+# include "gnl/get_next_line.h"
 # include "libft/libft.h"
+# include "push_swap.h"
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
