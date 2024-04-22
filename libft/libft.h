@@ -16,12 +16,13 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>
+
 typedef struct s_stack
 {
-	int index;
-	int value;
-	struct s_stack *next;
-} t_stack;
+	int				index;
+	int				value;
+	struct s_stack	*next;
+}	t_stack;
 
 int					ft_isalpha(int c);
 int					ft_isdigit(int c);
@@ -58,12 +59,9 @@ void				ft_putchar_fd(char c, int fd);
 void				ft_putstr_fd(char *s, int fd);
 void				ft_putendl_fd(char *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
-t_stack	*ft_lstnew(int value, int index);
+t_stack				*ft_lstnew(int value, int index);
 void				ft_lstadd_front(t_stack **lst, t_stack *new);
 int					ft_lstsize(t_stack *lst);
 t_stack				*ft_lstlast(t_stack *lst);
 void				ft_lstadd_back(t_stack **lst, t_stack *new);
-void				ft_lstdelone(t_stack *lst, void (*del)(void *));
-void				ft_lstclear(t_stack **lst, void (*del)(void *));
-void				ft_lstiter(t_stack *lst, void (*f)(void *));
 #endif
