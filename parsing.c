@@ -73,10 +73,10 @@ void	all_parsing(int ac, char **av)
 		{
 			if (!is_valid_integer(tmp[j]) || ft_atoi(tmp[j]) > INT_MAX
 				|| ft_atoi(tmp[j]) < INT_MIN)
-				{
-					free_arr(tmp);
-					disp_error("Invalid integer\n");
-				}
+			{
+				free_arr(tmp);
+				disp_error("Invalid integer\n");
+			}
 			j++;
 		}
 		free_arr(tmp);
