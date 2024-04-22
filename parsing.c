@@ -5,21 +5,22 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aassaf <aassaf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/01 22:19:09 by aassaf            #+#    #+#             */
-/*   Updated: 2024/04/01 22:19:09 by aassaf           ###   ########.fr       */
+/*   Created: 2024/04/22 10:34:54 by aassaf            #+#    #+#             */
+/*   Updated: 2024/04/22 10:34:54 by aassaf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int is_sorted(t_stack *stack)
+int	is_sorted(t_stack *stack)
 {
-	t_stack *tmp;
+	t_stack	*tmp;
+
 	tmp = stack;
-	while(tmp && tmp->next)
+	while (tmp && tmp->next)
 	{
-		if(tmp->value > tmp->next->value)
-			return(0);
+		if (tmp->value > tmp->next->value)
+			return (0);
 		tmp = tmp->next;
 	}
 	return (1);
@@ -27,7 +28,7 @@ int is_sorted(t_stack *stack)
 
 int	check_space(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i] && str[i] != '\t')
@@ -41,7 +42,7 @@ int	check_space(char *str)
 
 int	is_valid_integer(char *arg)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (arg[i] == '-' || arg[i] == '+')
@@ -57,10 +58,10 @@ int	is_valid_integer(char *arg)
 
 void	all_parsing(int ac, char **av)
 {
-	int i;
-	int j;
+	int		i;
+	int		j;
+	char	**tmp;
 
-	char **tmp;
 	i = 1;
 	while (i < ac)
 	{
@@ -70,7 +71,8 @@ void	all_parsing(int ac, char **av)
 		j = 0;
 		while (tmp[j])
 		{
-			if (!is_valid_integer(tmp[j]) || ft_atoi(tmp[j]) > INT_MAX || ft_atoi(tmp[j]) < INT_MIN)
+			if (!is_valid_integer(tmp[j]) || ft_atoi(tmp[j]) > INT_MAX
+				|| ft_atoi(tmp[j]) < INT_MIN)
 				disp_error("Invalid integer\n");
 			j++;
 		}
@@ -79,9 +81,9 @@ void	all_parsing(int ac, char **av)
 	free_arr(tmp);
 }
 
-int is_duplicate(int nb, t_stack **stack)
+int	is_duplicate(int nb, t_stack **stack)
 {
-	t_stack *tmp;
+	t_stack	*tmp;
 
 	tmp = *stack;
 	while (tmp)

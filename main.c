@@ -2,33 +2,30 @@
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
-/*                                                    +:+ +:+
-	+:+     */
-/*   By: aassaf <aassaf@student.42.fr>              +#+  +:+
-	+#+        */
-/*                                                +#+#+#+#+#+
-	+#+           */
-/*   Created: 2024/03/30 15:32:50 by aassaf            #+#    #+#             */
-/*   Updated: 2024/03/30 15:32:50 by aassaf           ###   ########.fr       */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aassaf <aassaf@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/20 21:39:47 by aassaf            #+#    #+#             */
+/*   Updated: 2024/04/20 21:39:47 by aassaf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void create_stack(int ac, char **av, t_stack **stack_a, t_stack **stack_b)
+void	create_stack(int ac, char **av, t_stack **stack_a, t_stack **stack_b)
 {
-	char **arr;
-	int i;
-	int j;
-	i = 1;
+	char	**arr;
+	int		i;
+	int		j;
 
-	while(i < ac)
+	i = 1;
+	while (i < ac)
 	{
 		arr = ft_split(av[i], ' ');
 		j = 0;
 		while (arr[j])
 		{
-			if(is_duplicate(ft_atoi(arr[j]), stack_a))
+			if (is_duplicate(ft_atoi(arr[j]), stack_a))
 			{
 				free_stack(stack_a);
 				free_stack(stack_b);
@@ -46,9 +43,11 @@ void create_stack(int ac, char **av, t_stack **stack_a, t_stack **stack_b)
 
 int	main(int ac, char **av)
 {
-	t_stack *stack_a = NULL;
-	t_stack *stack_b = NULL;
+	t_stack	*stack_a;
+	t_stack	*stack_b;
 
+	stack_a = NULL;
+	stack_b = NULL;
 	if (ac < 2)
 		disp_error("Argument less than 2\n");
 	all_parsing(ac, av);
@@ -57,18 +56,10 @@ int	main(int ac, char **av)
 	{
 		free_stack(&stack_a);
 		free_stack(&stack_b);
+		system("leaks push_swap");
 		exit(0);
 	}
 	sort_algo(&stack_a, &stack_b);
-	// printf("stack_a\n");
-	t_stack *tmp = stack_a;
-	// printf("%d\n",ft_lstsize(tmp));
-	while(tmp)
-	{
-		printf("%d\n", tmp->value);
-		tmp = tmp->next;
-	}
-	free_stack(stack_a);
-	free_stack(stack_b);
-	// return (0);
+	free_stack(&stack_a);
+	free_stack(&stack_b);
 }

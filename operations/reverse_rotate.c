@@ -12,13 +12,14 @@
 
 #include "../push_swap.h"
 
-int reverse_rotate(t_stack **stack)
+int	reverse_rotate(t_stack **stack)
 {
-	if(!*stack || !(*stack)->next)
+	t_stack	*last;
+	t_stack	*new_last;
+
+	if (!*stack || !(*stack)->next)
 		return (-1);
-	t_stack *last;
 	last = ft_lstlast(*stack);
-	t_stack *new_last;
 	new_last = *stack;
 	while (new_last->next != last)
 		new_last = new_last->next;
@@ -28,7 +29,7 @@ int reverse_rotate(t_stack **stack)
 	return (0);
 }
 
-int rra(t_stack **stack_a, int isprint)
+int	rra(t_stack **stack_a, int isprint)
 {
 	if (reverse_rotate(stack_a) == -1)
 		return (-1);
@@ -37,7 +38,7 @@ int rra(t_stack **stack_a, int isprint)
 	return (0);
 }
 
-int rrb(t_stack **stack_b, int isprint)
+int	rrb(t_stack **stack_b, int isprint)
 {
 	if (reverse_rotate(stack_b) == -1)
 		return (-1);
@@ -46,7 +47,7 @@ int rrb(t_stack **stack_b, int isprint)
 	return (0);
 }
 
-int rrr(t_stack **stack_a, t_stack **stack_b, int isprint)
+int	rrr(t_stack **stack_a, t_stack **stack_b, int isprint)
 {
 	if (reverse_rotate(stack_a) == -1 || reverse_rotate(stack_b) == -1)
 		return (-1);

@@ -5,27 +5,27 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aassaf <aassaf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/17 20:36:32 by aassaf            #+#    #+#             */
-/*   Updated: 2024/04/17 20:36:33 by aassaf           ###   ########.fr       */
+/*   Created: 2024/04/22 10:18:21 by aassaf            #+#    #+#             */
+/*   Updated: 2024/04/22 10:18:21 by aassaf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap_bonus.h"
 
-void create_stack(int ac, char **av, t_stack **stack_a, t_stack **stack_b)
+void	create_stack(int ac, char **av, t_stack **stack_a, t_stack **stack_b)
 {
-	char **arr;
-	int i;
-	int j;
-	i = 1;
+	char	**arr;
+	int		i;
+	int		j;
 
-	while(i < ac)
+	i = 1;
+	while (i < ac)
 	{
 		arr = ft_split(av[i], ' ');
 		j = 0;
 		while (arr[j])
 		{
-			if(is_duplicate(ft_atoi(arr[j]), stack_a))
+			if (is_duplicate(ft_atoi(arr[j]), stack_a))
 			{
 				free_stack(stack_a);
 				free_stack(stack_b);
@@ -41,15 +41,15 @@ void create_stack(int ac, char **av, t_stack **stack_a, t_stack **stack_b)
 	}
 }
 
-void hdl_err_bonus(char *str, t_stack *a, t_stack *b)
+void	hdl_err_bonus(char *str, t_stack **a, t_stack **b)
 {
-	ft_putstr_fd(str , 2);
-	free_stack(&a);
-	free_stack(&b);
-	exit (1);
+	ft_putstr_fd(str, 2);
+	free_stack(a);
+	free_stack(b);
+	exit(1);
 }
 
-int ft_checker(char *buff, t_stack **a, t_stack **b)
+int	ft_checker(char *buff, t_stack **a, t_stack **b)
 {
 	if (!ft_strncmp(buff, "sa\n", 3))
 		sa(a, 0);
@@ -78,27 +78,9 @@ int ft_checker(char *buff, t_stack **a, t_stack **b)
 	return (0);
 }
 
-int main(int ac, char **av)
+void	print_result(t_stack *stack_a, t_stack *stack_b)
 {
-	t_stack	*stack_a = NULL;
-	t_stack	*stack_b = NULL;
-	char *buff;
-	if(ac < 2)
-		disp_error("Argument less than 1\n");
-	all_parsing(ac, av);
-	create_stack(ac, av, &stack_a, &stack_b);
-	buff = get_next_line(0);
-	while (buff)
-	{
-		if(ft_checker(buff, &stack_a, &stack_b) == -1)
-		{
-			free(buff);
-			hdl_err_bonus("Error", stack_a, stack_b);
-		}
-		free(buff);
-		buff = get_next_line(0);
-	}
-	if(is_sorted(stack_a) && !stack_b)
+	if (is_sorted(stack_a) && !stack_b)
 	{
 		free_stack(&stack_a);
 		free_stack(&stack_b);
@@ -112,4 +94,30 @@ int main(int ac, char **av)
 		ft_putstr_fd("KO\n", 1);
 		exit(0);
 	}
+}
+
+int	main(int ac, char **av)
+{
+	t_stack	*stack_a;
+	t_stack	*stack_b;
+	char	*buff;
+
+	stack_a = NULL;
+	stack_b = NULL;
+	if (ac < 2)
+		disp_error("Argument less than 1\n");
+	all_parsing(ac, av);
+	create_stack(ac, av, &stack_a, &stack_b);
+	buff = get_next_line(0);
+	while (buff)
+	{
+		if (ft_checker(buff, &stack_a, &stack_b) == -1)
+		{
+			free(buff);
+			hdl_err_bonus("Error", &stack_a, &stack_b);
+		}
+		free(buff);
+		buff = get_next_line(0);
+	}
+	print_result(stack_a, stack_b);
 }
