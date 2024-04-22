@@ -49,14 +49,14 @@ int	main(int ac, char **av)
 	stack_a = NULL;
 	stack_b = NULL;
 	if (ac < 2)
-		disp_error("Argument less than 2\n");
+		exit (1);
 	all_parsing(ac, av);
 	create_stack(ac, av, &stack_a, &stack_b);
 	if (is_sorted(stack_a))
 	{
 		free_stack(&stack_a);
 		free_stack(&stack_b);
-		system("leaks push_swap");
+		// system("leaks push_swap");
 		exit(0);
 	}
 	sort_algo(&stack_a, &stack_b);

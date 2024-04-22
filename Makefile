@@ -1,16 +1,15 @@
 NAME	= push_swap
 NAMEB 	= checker
 CC	= cc
-CFLAGS  = -Wall -Werror -Wextra -g -fsanitize=address
-SRC	= parsing.c main.c utils.c sort_algo.c \
+CFLAGS  = -Wall -Werror -Wextra #-g -fsanitize=address
+SRC	= parsing.c main.c utils.c sort_algo.c big_sort_utils.c \
 		operations/push.c operations/swap.c operations/rotate.c \
 		operations/reverse_rotate.c sort_utils.c big_sort.c \
-		big_sort_utils.c
+		
 
-SRCB = checker.c parsing.c utils.c utils_libft.c \
-		operations/push.c operations/swap.c operations/rotate.c \
-		operations/reverse_rotate.c sort_utils.c gnl/get_next_line.c \
-		gnl/get_next_line_utils.c
+SRCB = checker.c parsing.c utils.c operations/push.c operations/swap.c \
+		operations/rotate.c operations/reverse_rotate.c sort_utils.c \
+		gnl/get_next_line.c gnl/get_next_line_utils.c
 
 
 LIBFT  = libft/libft.a
