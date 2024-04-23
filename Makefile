@@ -1,11 +1,12 @@
 NAME	= push_swap
 NAMEB 	= checker
 CC	= cc
-CFLAGS  = -Wall -Werror -Wextra #-g -fsanitize=address
+CFLAGS  = -Wall -Werror -Wextra
+
 SRC	= parsing.c main.c utils.c sort_algo.c big_sort_utils.c \
 		operations/push.c operations/swap.c operations/rotate.c \
 		operations/reverse_rotate.c sort_utils.c big_sort.c \
-		
+
 
 SRCB = checker.c parsing.c utils.c operations/push.c operations/swap.c \
 		operations/rotate.c operations/reverse_rotate.c sort_utils.c \
@@ -15,6 +16,7 @@ SRCB = checker.c parsing.c utils.c operations/push.c operations/swap.c \
 LIBFT  = libft/libft.a
 OBJ 	= $(SRC:.c=.o)
 OBJB 	= $(SRCB:.c=.o)
+
 all: 	$(LIBFT) $(NAME)
 
 bonus: 	$(LIBFT) $(NAMEB)
@@ -31,4 +33,4 @@ clean:
 fclean:	clean
 	rm -f $(NAME) $(NAMEB)
 
-re:	fclean all bonus
+re:	fclean all

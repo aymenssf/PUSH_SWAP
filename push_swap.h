@@ -26,7 +26,6 @@ typedef struct s_push_swap
 	int		size_b;
 }		t_push_swap;
 
-void	disp_error(char *str);
 int		check_space(char *str);
 int		is_valid_integer(char *arg);
 int		is_duplicate(int nb, t_stack **stack);

@@ -29,7 +29,7 @@ void	create_stack(int ac, char **av, t_stack **stack_a, t_stack **stack_b)
 			{
 				free_stack(stack_a);
 				free_stack(stack_b);
-				disp_error("\n");
+				print_error();
 				free_arr(arr);
 				exit(1);
 			}
@@ -56,7 +56,6 @@ int	main(int ac, char **av)
 	{
 		free_stack(&stack_a);
 		free_stack(&stack_b);
-		// system("leaks push_swap");
 		exit(0);
 	}
 	sort_algo(&stack_a, &stack_b);

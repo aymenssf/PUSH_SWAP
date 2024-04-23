@@ -66,7 +66,7 @@ void	all_parsing(int ac, char **av)
 	while (i < ac)
 	{
 		if (av[0][i] == '\0' || check_space(av[i]))
-			disp_error("\n");
+			print_error();
 		tmp = ft_split(av[i], ' ');
 		j = 0;
 		while (tmp[j])
@@ -75,7 +75,7 @@ void	all_parsing(int ac, char **av)
 				|| ft_atoi(tmp[j]) < INT_MIN)
 			{
 				free_arr(tmp);
-				disp_error("Invalid integer\n");
+				print_error();
 			}
 			j++;
 		}

@@ -42,13 +42,6 @@ void	free_stack(t_stack **stack)
 	*stack = NULL;
 }
 
-void	disp_error(char *str)
-{
-	ft_putstr_fd("Error\n", 2);
-	write(2, str, ft_strlen(str));
-	exit(1);
-}
-
 void	print_error(void)
 {
 	ft_putstr_fd("Error\n", 2);
