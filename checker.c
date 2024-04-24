@@ -41,9 +41,9 @@ void	create_stack(int ac, char **av, t_stack **stack_a, t_stack **stack_b)
 	}
 }
 
-void	hdl_err_bonus(char *str, t_stack **a, t_stack **b)
+void	hdl_err_bonus(t_stack **a, t_stack **b)
 {
-	ft_putstr_fd(str, 2);
+	ft_putstr_fd("Error\n", 2);
 	free_stack(a);
 	free_stack(b);
 	exit(1);
@@ -114,7 +114,7 @@ int	main(int ac, char **av)
 		if (ft_checker(buff, &stack_a, &stack_b) == -1)
 		{
 			free(buff);
-			hdl_err_bonus("Error", &stack_a, &stack_b);
+			hdl_err_bonus(&stack_a, &stack_b);
 		}
 		free(buff);
 		buff = get_next_line(0);

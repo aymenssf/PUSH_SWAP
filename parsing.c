@@ -65,7 +65,7 @@ void	all_parsing(int ac, char **av)
 	i = 1;
 	while (i < ac)
 	{
-		if (av[0][i] == '\0' || check_space(av[i]))
+		if (check_space(av[i]))
 			print_error();
 		tmp = ft_split(av[i], ' ');
 		j = 0;
