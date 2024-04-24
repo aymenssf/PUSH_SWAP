@@ -17,15 +17,6 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-typedef struct s_push_swap
-{
-	t_stack	*a;
-	t_stack	*b;
-	int		*arr;
-	int		size_a;
-	int		size_b;
-}		t_push_swap;
-
 int		check_space(char *str);
 int		is_valid_integer(char *arg);
 int		is_duplicate(int nb, t_stack **stack);
